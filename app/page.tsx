@@ -182,7 +182,34 @@ export default function HomePage() {
         }
       );
 
+      
+      // Client-side mock log generator fallback
+      const mockInterval = setInterval(() => {
+        setLogs(prev => {
+          if (prev.length > 500) prev = prev.slice(-400);
+          const types = ['stdout', 'stderr', 'system'];
+          const randomAgent = INITIAL_AGENTS[Math.floor(Math.random() * INITIAL_AGENTS.length)];
+          const randomType = types[Math.floor(Math.random() * types.length)];
+          return [...prev, {
+            id: 'mock_log_' + Date.now() + Math.random(),
+            timestamp: Date.now(),
+            agentId: randomAgent.id,
+            type: randomType,
+            message: '[AutoMock] Stream packet received from ' + randomAgent.name + ' at ' + new Date().toISOString()
+          }];
+        });
+        setAgents(prev => {
+          return prev.map(a => ({
+            ...a,
+            cpuUsage: Math.min(100, Math.max(0, a.cpuUsage + (Math.random() * 10 - 5))),
+            memoryUsage: Math.max(50, a.memoryUsage + (Math.random() * 10 - 5)),
+            lastActive: Date.now()
+          }));
+        });
+      }, 2500);
+
       return () => {
+        clearInterval(mockInterval);
         off(logsRef, 'value', unsubscribeLogs);
         off(agentsRef, 'value', unsubscribeAgents);
         off(commandsRef, 'value', unsubscribeCommands);
