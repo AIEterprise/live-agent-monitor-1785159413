@@ -1,0 +1,15 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "logs": {
+      ".indexOn": ["timestamp", "agentId", "type"]
+    },
+    "agents": {
+      ".indexOn": ["status", "lastActive"]
+    },
+    "commands": {
+      ".indexOn": ["timestamp", "status", "agentId"]
+    }
+  }
+}
