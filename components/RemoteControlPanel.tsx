@@ -260,7 +260,7 @@ export default function RemoteControlPanel({
                 <div className="flex items-center space-x-3 shrink-0 text-[10px]">
                   <span className="text-offwhite-dim flex items-center gap-1">
                     <Clock className="w-3 h-3" />
-                    {new Date(cmd.timestamp).toLocaleTimeString()}
+                    <span suppressHydrationWarning>{new Date(cmd.timestamp).toLocaleTimeString()}</span>
                   </span>
 
                   <span

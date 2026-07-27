@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-charcoal text-offwhite min-h-screen flex flex-col antialiased selection:bg-sea/30 selection:text-sea-light">
+      <body suppressHydrationWarning>
         <SmoothScrollProvider>
           {/* Dark Aesthetic Header/Navbar */}
           <header className="sticky top-0 z-50 backdrop-blur-md bg-charcoal/90 border-b border-charcoal-border px-4 lg:px-8 py-3 transition-colors duration-200">

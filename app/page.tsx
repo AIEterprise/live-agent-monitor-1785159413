@@ -32,7 +32,7 @@ const INITIAL_AGENTS: AgentTelemetry[] = [
     status: 'running',
     cpuUsage: 28.4,
     memoryUsage: 142.8,
-    lastActive: Date.now() - 1000,
+    lastActive: 1710000000000 - 1000,
   },
   {
     id: 'worker_m1',
@@ -41,7 +41,7 @@ const INITIAL_AGENTS: AgentTelemetry[] = [
     status: 'running',
     cpuUsage: 45.2,
     memoryUsage: 210.5,
-    lastActive: Date.now() - 2000,
+    lastActive: 1710000000000 - 2000,
   },
   {
     id: 'worker_m2',
@@ -50,7 +50,7 @@ const INITIAL_AGENTS: AgentTelemetry[] = [
     status: 'idle',
     cpuUsage: 0.0,
     memoryUsage: 84.2,
-    lastActive: Date.now() - 15000,
+    lastActive: 1710000000000 - 15000,
   },
   {
     id: 'qa_specialist',
@@ -59,42 +59,42 @@ const INITIAL_AGENTS: AgentTelemetry[] = [
     status: 'completed',
     cpuUsage: 0.0,
     memoryUsage: 64.0,
-    lastActive: Date.now() - 45000,
+    lastActive: 1710000000000 - 45000,
   },
 ];
 
 const INITIAL_LOGS: AgentLog[] = [
   {
     id: 'log_init_1',
-    timestamp: Date.now() - 60000,
+    timestamp: 1710000000000 - 60000,
     agentId: 'orch_main',
     type: 'system',
     message: 'Antigravity Agent Execution Engine initialized. Firebase Realtime DB connected.',
   },
   {
     id: 'log_init_2',
-    timestamp: Date.now() - 45000,
+    timestamp: 1710000000000 - 45000,
     agentId: 'worker_m1',
     type: 'stdout',
     message: 'Compiling Next.js App Router components and Tailwind CSS design tokens...',
   },
   {
     id: 'log_init_3',
-    timestamp: Date.now() - 30000,
+    timestamp: 1710000000000 - 30000,
     agentId: 'worker_m1',
     type: 'stdout',
     message: 'GSAP streaming line entrance transitions & Lenis smooth scroll active.',
   },
   {
     id: 'log_init_4',
-    timestamp: Date.now() - 20000,
+    timestamp: 1710000000000 - 20000,
     agentId: 'worker_m2',
     type: 'stderr',
     message: 'Notice: Memory usage threshold nominal (84.2 MB). Ready for commands.',
   },
   {
     id: 'log_init_5',
-    timestamp: Date.now() - 10000,
+    timestamp: 1710000000000 - 10000,
     agentId: 'qa_specialist',
     type: 'system',
     message: 'Verification pass complete: 28/28 E2E tests verified across Tiers 1-4.',
