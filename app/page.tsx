@@ -130,7 +130,7 @@ export default function HomePage() {
       const logsRef = ref(rtdb, 'logs');
       const unsubscribeLogs = onValue(
         logsRef,
-        (snapshot) => {
+        (snapshot: any) => {
           const val = snapshot.val();
           if (val) {
             const list: AgentLog[] = Array.isArray(val)
@@ -141,7 +141,7 @@ export default function HomePage() {
             }
           }
         },
-        (error) => {
+        (error: any) => {
           console.warn('[Firebase RTDB] Logs snapshot subscription error:', error);
         }
       );
@@ -149,7 +149,7 @@ export default function HomePage() {
       const agentsRef = ref(rtdb, 'agents');
       const unsubscribeAgents = onValue(
         agentsRef,
-        (snapshot) => {
+        (snapshot: any) => {
           const val = snapshot.val();
           if (val) {
             const list: AgentTelemetry[] = Array.isArray(val)
@@ -160,7 +160,7 @@ export default function HomePage() {
             }
           }
         },
-        (error) => {
+        (error: any) => {
           console.warn('[Firebase RTDB] Agents snapshot subscription error:', error);
         }
       );
@@ -168,7 +168,7 @@ export default function HomePage() {
       const commandsRef = ref(rtdb, 'commands');
       const unsubscribeCommands = onValue(
         commandsRef,
-        (snapshot) => {
+        (snapshot: any) => {
           const val = snapshot.val();
           if (val) {
             const list: AgentCommand[] = Array.isArray(val)
@@ -177,7 +177,7 @@ export default function HomePage() {
             setCommands(list);
           }
         },
-        (error) => {
+        (error: any) => {
           console.warn('[Firebase RTDB] Commands snapshot subscription error:', error);
         }
       );

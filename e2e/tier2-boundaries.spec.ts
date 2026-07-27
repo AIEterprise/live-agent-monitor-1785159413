@@ -1,12 +1,12 @@
-import { describe, it, expect } from './test-runner.ts';
+import { describe, it, expect } from './test-runner';
 import {
   filterLogs,
   updateTelemetry,
   enqueueCommand,
   executeCommand,
   escapeRegExp,
-} from '../lib/monitor-engine.ts';
-import type { AgentLog, AgentTelemetry, AgentCommand } from '../lib/types.ts';
+} from '../lib/monitor-engine';
+import type { AgentLog, AgentTelemetry, AgentCommand } from '../lib/types';
 
 describe('Tier 2: Boundary & Corner Cases - Empty & Zero States', () => {
   it('T2.1.1: should handle filtering against an empty log dataset without throwing', () => {

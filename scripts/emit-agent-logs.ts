@@ -6,8 +6,8 @@
  */
 
 import { ref, set, get, update, push, child } from 'firebase/database';
-import { rtdb, mockStore, isFirebaseConfigured } from '../lib/firebase.ts';
-import type { AgentLog, AgentTelemetry, AgentCommand, LogType, AgentStatus } from '../lib/types.ts';
+import { rtdb, mockStore, isFirebaseConfigured } from '../lib/firebase';
+import type { AgentLog, AgentTelemetry, AgentCommand, LogType, AgentStatus } from '../lib/types';
 
 // Initial Agents Definition
 const agentsList: AgentTelemetry[] = [

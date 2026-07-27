@@ -1,12 +1,12 @@
-import { describe, it, expect } from './test-runner.ts';
+import { describe, it, expect } from './test-runner';
 import {
   filterLogs,
   updateTelemetry,
   enqueueCommand,
   executeCommand,
   formatLogLine,
-} from '../lib/monitor-engine.ts';
-import type { AgentLog, AgentTelemetry, AgentCommand } from '../lib/types.ts';
+} from '../lib/monitor-engine';
+import type { AgentLog, AgentTelemetry, AgentCommand } from '../lib/types';
 
 describe('Tier 4: Real-World Scenarios - Multi-Agent Pipeline Execution', () => {
   it('T4.1.1: should simulate complete lifecycle of a multi-agent workflow with state coherence across all components', () => {

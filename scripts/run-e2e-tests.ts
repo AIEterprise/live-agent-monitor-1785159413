@@ -1,10 +1,10 @@
-import { globalRunner } from '../e2e/test-runner.ts';
+import { globalRunner } from '../e2e/test-runner';
 
 // Import all 4 Tier Test Specs to register suites with globalRunner
-import '../e2e/tier1-features.spec.ts';
-import '../e2e/tier2-boundaries.spec.ts';
-import '../e2e/tier3-combinations.spec.ts';
-import '../e2e/tier4-scenarios.spec.ts';
+import '../e2e/tier1-features.spec';
+import '../e2e/tier2-boundaries.spec';
+import '../e2e/tier3-combinations.spec';
+import '../e2e/tier4-scenarios.spec';
 
 async function main() {
   console.log('Starting E2E Test Suite for live_agent_monitor...');

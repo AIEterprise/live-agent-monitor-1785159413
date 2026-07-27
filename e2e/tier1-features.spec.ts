@@ -1,4 +1,4 @@
-import { describe, it, expect } from './test-runner.ts';
+import { describe, it, expect } from './test-runner';
 import {
   filterLogs,
   updateTelemetry,
@@ -6,8 +6,8 @@ import {
   executeCommand,
   calculateAutoScrollState,
   formatLogLine,
-} from '../lib/monitor-engine.ts';
-import type { AgentLog, AgentTelemetry, AgentCommand } from '../lib/types.ts';
+} from '../lib/monitor-engine';
+import type { AgentLog, AgentTelemetry, AgentCommand } from '../lib/types';
 
 describe('Tier 1: Feature Coverage - Terminal Feed Engine', () => {
   const sampleLogs: AgentLog[] = [

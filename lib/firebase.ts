@@ -1,6 +1,6 @@
-import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
-import { getDatabase, Database } from 'firebase/database';
-import { getFirestore, Firestore } from 'firebase/firestore';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getDatabase } from 'firebase/database';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || 'mock-api-key',
@@ -13,24 +13,24 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase App singleton
-const app: FirebaseApp = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const app: any = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 // Initialize Realtime Database & Firestore SDKs
-let rtdb: Database;
-let db: Firestore;
+let rtdb: any;
+let db: any;
 
 try {
   rtdb = getDatabase(app);
 } catch (e) {
   console.warn('[Firebase] RTDB initialization fallback:', e);
-  rtdb = null as unknown as Database;
+  rtdb = null as unknown as any;
 }
 
 try {
   db = getFirestore(app);
 } catch (e) {
   console.warn('[Firebase] Firestore initialization fallback:', e);
-  db = null as unknown as Firestore;
+  db = null as unknown as any;
 }
 
 /**

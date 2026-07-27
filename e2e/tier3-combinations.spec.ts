@@ -1,12 +1,12 @@
-import { describe, it, expect } from './test-runner.ts';
+import { describe, it, expect } from './test-runner';
 import {
   filterLogs,
   updateTelemetry,
   enqueueCommand,
   executeCommand,
   calculateAutoScrollState,
-} from '../lib/monitor-engine.ts';
-import type { AgentLog, AgentTelemetry, AgentCommand } from '../lib/types.ts';
+} from '../lib/monitor-engine';
+import type { AgentLog, AgentTelemetry, AgentCommand } from '../lib/types';
 
 describe('Tier 3: Cross-Feature Combinations - Search Filtering during Live Stream Auto-Scroll', () => {
   it('T3.1.1: should continuously filter streaming incoming logs without breaking scroll calculations', () => {
